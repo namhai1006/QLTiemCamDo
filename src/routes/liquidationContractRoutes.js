@@ -16,7 +16,7 @@ Router.route("/get-liquidation-contract-by-id/:id").get(
   verifyAccessToken,
   getLiquidationContractById
 );
-Router.route("/create-liquidation-contract").post(
+Router.route("/create-liquidation-contract/:pawnContractId").post(
   verifyAccessToken,
   createLiquidationContract
 );
