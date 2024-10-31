@@ -40,6 +40,11 @@ export async function login(req, res, next) {
       err.status = 404;
       next(err);
     }
+    if (!foundUser.isApproved) {
+      const err = new Error("Tài khoản của bạn chưa được phê duyệt");
+      err.status = 403;
+      next(err);
+    }
     if (bcrypt.compareSync(password, foundUser.password)) {
       const accessToken = jwt.sign(
         { id: foundUser._id, role: foundUser.role },
@@ -61,3 +66,16 @@ export async function login(req, res, next) {
     next(err);
   }
 }
+
+export async function logout(req, res, next) {
+  try {
+    res
+      .status(200)
+      .json({ message: "Đăng xuất thành công" });
+  } catch (error) {
+    const err = new Error(error);
+    err.status = 500;
+    next(err);
+  }
+}
+

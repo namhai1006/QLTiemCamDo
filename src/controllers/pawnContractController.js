@@ -1,5 +1,6 @@
 import { PawnContract } from "../models/PawnContract.js";
 import { PawnItem } from "../models/PawnItem.js";
+import { Trash } from "../models/Trash.js";
 import mongoose from "mongoose";
 
 export const getAllPawnContracts = async (req, res, next) => {
