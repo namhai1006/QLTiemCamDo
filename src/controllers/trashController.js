@@ -2,6 +2,10 @@ import { Trash } from "../models/Trash.js";
 
 export const getTrash = async (req, res, next) => {
     try {
+        const foundUser = req.user;
+        if (!foundUser?.role == "admin") {
+            return res.status(401).json({ message: "Bạn không có quyền truy cập" });
+        }
         const trashItems = await Trash.find();
         res.json(trashItems);
     } catch (error) {
@@ -13,6 +17,10 @@ export const getTrash = async (req, res, next) => {
 
 export const restoreFromTrash = async (req, res, next) => {
     try {
+        const foundUser = req.user;
+        if (!foundUser?.role == "admin") {
+            return res.status(401).json({ message: "Bạn không có quyền truy cập" });
+        }
         const { id } = req.params;
         const trashItem = await Trash.findById(id);
 
@@ -40,6 +48,10 @@ export const restoreFromTrash = async (req, res, next) => {
 
 export const deleteFromTrash = async (req, res, next) => {
     try {
+        const foundUser = req.user;
+        if (!foundUser?.role == "admin") {
+            return res.status(401).json({ message: "Bạn không có quyền truy cập" });
+        }
         const { id } = req.params;
         const trashItem = await Trash.findByIdAndDelete(id);
 
