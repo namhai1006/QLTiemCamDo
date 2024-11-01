@@ -22,8 +22,8 @@ export const createInterestRate = async (req, res, next) => {
     if (!foundUser?.role == "admin") {
       return res.status(401).json({ message: "Unauthorized" });
     }
-    const { itemType, rate } = req.body;
-    const newInterestRate = new InterestRate({ itemType, rate });
+    const { assetType, rate } = req.body;
+    const newInterestRate = new InterestRate({ assetType, rate });
     await newInterestRate.save();
     res.status(201).json(newInterestRate);
   } catch (error) {
@@ -66,7 +66,7 @@ export const deleteInterestRate = async (req, res, next) => {
     if (!interestRate) {
       return res.status(404).json({ message: "Interest rate not found" });
     }
-    res.json(interestRate);
+    res.status(200).json({ interestRate, message: "Interest rate has been deleted successfully!" });
   } catch (error) {
     const err = new Error(error);
     err.status = 500;

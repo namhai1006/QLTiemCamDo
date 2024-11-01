@@ -24,4 +24,4 @@ const liquidationContractSchema = new Schema(
   { timestamps: true }
 );
 
-export const LiquidationContract = model("LiquidationContract",   liquidationContractSchema);
+export const LiquidationContract = model("LiquidationContract", liquidationContractSchema);

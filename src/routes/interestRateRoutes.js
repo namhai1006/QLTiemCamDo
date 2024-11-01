@@ -13,11 +13,11 @@ Router.route("/create-interest-rate").post(
   verifyAccessToken,
   createInterestRate
 );
-Router.route("/update-interest-rate").patch(
+Router.route("/update-interest-rate/:id").patch(
   verifyAccessToken,
   updateInterestRate
 );
-Router.route("/delete-interest-rate").delete(
+Router.route("/delete-interest-rate/:id").delete(
   verifyAccessToken,
   deleteInterestRate
 );

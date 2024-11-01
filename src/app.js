@@ -14,6 +14,7 @@ import pawnContractRoutes from "./routes/pawnContractRoutes.js";
 import pawnItemRoutes from "./routes/pawnItemRoutes.js";
 import liquidationContractRoutes from "./routes/liquidationContractRoutes.js";
 import interestRateRoutes from "./routes/interestRateRoutes.js";
+import trashRoutes from "./routes/trashRoutes.js"
 
 connectDB();
 const app = express();
@@ -27,6 +28,7 @@ app.use(prefix.APP_REFIX + "auth", authRoutes);
 app.use(prefix.APP_REFIX + "user", userRoutes);
 app.use(prefix.APP_REFIX + "admin", adminRoutes);
 app.use(prefix.APP_REFIX + "pawnContract", pawnContractRoutes);
+app.use(prefix.APP_REFIX + "trash", trashRoutes);
 app.use(prefix.APP_REFIX + "liquidationContract", liquidationContractRoutes);
 app.use(prefix.APP_REFIX + "pawnItem", pawnItemRoutes);
 app.use(prefix.APP_REFIX + "interestRate", interestRateRoutes);
