@@ -6,7 +6,7 @@ export const approveUser = async (req, res, next) => {
     if (!foundUser?.role == "admin") {
       return res.status(401).json({ message: "Bạn không có quyền truy cập" });
     }
-    const { id } = req.body;
+    const { id } = req.params;
     if (!id) {
       return res
         .status(400)
@@ -36,7 +36,7 @@ export const rejectUser = async (req, res, next) => {
     if (!foundUser?.role == "admin") {
       return res.status(401).json({ message: "Bạn không có quyền truy cập" });
     }
-    const { id } = req.body;
+    const { id } = req.params;
     console.log(id);
     if (!id) {
       return res
