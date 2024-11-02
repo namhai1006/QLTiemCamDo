@@ -29,22 +29,25 @@ export async function register(req, res, next) {
 export async function login(req, res, next) {
   try {
     const { usernameOrEmail, password } = req.body;
-    console.log(req.body)
+    console.log(req.body);
+
     const foundUser = await User.findOne({
-      $or: [{ email: usernameOrEmail }],
+      $or: [{ email: usernameOrEmail }, { username: usernameOrEmail }],
     });
     console.log(foundUser);
 
     if (!foundUser) {
       const err = new Error("Không tìm thấy người dùng");
       err.status = 404;
-      next(err);
+      return next(err);
     }
+
     if (!foundUser.isApproved) {
       const err = new Error("Tài khoản của bạn chưa được phê duyệt");
       err.status = 403;
-      next(err);
+      return next(err);
     }
+
     if (bcrypt.compareSync(password, foundUser.password)) {
       const accessToken = jwt.sign(
         { id: foundUser._id, role: foundUser.role },
@@ -58,14 +61,15 @@ export async function login(req, res, next) {
     } else {
       const err = new Error("Sai mật khẩu");
       err.status = 401;
-      next(err);
+      return next(err);
     }
   } catch (error) {
-    const err = new Error(error);
+    const err = new Error(error.message);
     err.status = 500;
     next(err);
   }
 }
+
 
 export async function logout(req, res, next) {
   try {
