@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { PawnItem } from "../models/PawnItem.js";
 
 const pawnContractSchema = new Schema(
   {
@@ -10,9 +11,10 @@ const pawnContractSchema = new Schema(
     assetCondition: { type: String, required: true },
     principalAmount: { type: Number, required: true },
     rate: { type: Number, required: true }, // %/day
-    startDate: { type: Date, required: true },
+    startDate: { type: Date, default: Date.now, required: true },
     endDate: { type: Date, required: true },
     totalAmountDue: { type: Number, required: true },
+    totalAmountCustomerNeedToPaid: { type: Number, required: true },
     creator: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -27,5 +29,20 @@ const pawnContractSchema = new Schema(
   },
   { timestamps: true }
 );
+
+// Pre-save middleware to update PawnItem status when PawnContract status changes
+pawnContractSchema.pre("save", async function (next) {
+  if (!this.isModified("status")) return next();
+
+  try {
+    await PawnItem.updateMany(
+      { pawnContract: this._id },
+      { $set: { status: this.status } }
+    );
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
 export const PawnContract = model("PawnContract", pawnContractSchema);

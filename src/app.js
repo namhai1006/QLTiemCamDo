@@ -15,6 +15,7 @@ import pawnItemRoutes from "./routes/pawnItemRoutes.js";
 import liquidationContractRoutes from "./routes/liquidationContractRoutes.js";
 import interestRateRoutes from "./routes/interestRateRoutes.js";
 import trashRoutes from "./routes/trashRoutes.js"
+import "./cronJobs.js";
 
 connectDB();
 const app = express();
