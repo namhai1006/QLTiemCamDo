@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- [Head] start -->
+
+  <head>
+    <title>Home | Datta able Dashboard Template</title>
+    <!-- [Meta] -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Datta able is trending dashboard template made using Bootstrap 5 design framework. Datta able is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies.">
+    <meta name="keywords" content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard">
+    <meta name="author" content="Codedthemes">
+
+    <!-- [Favicon] icon -->
+    <link rel="icon" href="/views/dist/assets/images/favicon.svg" type="image/x-icon"> <!-- [Font] Family -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- [Tabler Icons] https://tablericons.com -->
+<link rel="stylesheet" href="/views/dist/assets/fonts/tabler-icons.min.css" >
+<!-- [Feather Icons] https://feathericons.com -->
+<link rel="stylesheet" href="/views/dist/assets/fonts/feather.css" >
+<!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+<link rel="stylesheet" href="/views/dist/assets/fonts/fontawesome.css" >
+<!-- [Material Icons] https://fonts.google.com/icons -->
+<link rel="stylesheet" href="/views/dist/assets/fonts/material.css" >
+<!-- [Template CSS Files] -->
+<link rel="stylesheet" href="/views/dist/assets/css/style.css" id="main-style-link" >
+<link rel="stylesheet" href="/views/dist/assets/css/style-preset.css" >
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-14K1GBX9FG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-14K1GBX9FG');
+</script>
+<!-- WiserNotify -->
+<script>
+  !(function () {
+    if (window.t4hto4) console.log('WiserNotify pixel installed multiple time in this page');
+    else {
+      window.t4hto4 = !0;
+      var t = document,
+        e = window,
+        n = function () {
+          var e = t.createElement('script');
+          (e.type = 'text/javascript'),
+            (e.async = !0),
+            (e.src = 'https://pt.wisernotify.com/pixel.js?ti=1jclj6jkfc4hhry'),
+            document.body.appendChild(e);
+        };
+      'complete' === t.readyState ? n() : window.attachEvent ? e.attachEvent('onload', n) : e.addEventListener('load', n, !1);
+    }
+  })();
+</script>
+<!-- Microsoft clarity -->
+<script type="text/javascript">
+  (function (c, l, a, r, i, t, y) {
+    c[a] =
+      c[a] ||
+      function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+    t = l.createElement(r);
+    t.async = 1;
+    t.src = 'https://www.clarity.ms/tag/' + i;
+    y = l.getElementsByTagName(r)[0];
+    y.parentNode.insertBefore(t, y);
+  })(window, document, 'clarity', 'script', 'gkn6wuhrtb');
+</script>
+
+  </head>
+  <!-- [Head] end -->
+  <!-- [Body] Start -->
+
+  <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+    <!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+ <!-- [ Sidebar Menu ] start -->
+ <style>
+  .pc-sidebar {
+      position: fixed; /* Fix the sidebar to the left */
+      top: 0; /* Align it to the top */
+      left: 0; /* Align it to the left */
+      width: 250px; /* Adjust this value as needed for your design */
+      height: 100vh; /* Full height */
+      background-color: #3F4D67; /* Đặt màu nền */
+      z-index: 1000; /* Ensure it appears above other content */
+      overflow-y: hidden; /* Hide overflow if not needed */
+  }
+  
+  .navbar-wrapper {
+      padding: 10px; /* Giảm padding để tạo không gian hợp lý */
+  }
+  
+  .pc-navbar {
+      list-style: none; /* Remove list styling */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+  }
+  
+  .pc-item {
+      padding: 5px 10px; /* Giảm padding để làm cho các mục nhỏ hơn */
+  }
+  
+  .pc-link {
+      display: flex; /* Flexbox for alignment */
+      align-items: center; /* Center align items vertically */
+      justify-content: flex-start; /* Align items to the start */
+      text-decoration: none; /* Remove underline */
+      color: #ffffff; /* Màu chữ trắng cho độ tương phản tốt */
+      transition: background-color 0.3s; /* Transition effect for hover */
+      width: 100%; /* Đảm bảo ô chiếm toàn bộ chiều rộng */
+  }
+  
+  .pc-link:hover {
+      background-color: #4A5A7D; /* Thay đổi màu nền khi hover */
+  }
+  
+  .pc-caption {
+      color: #ffffff; /* Màu chữ trắng cho tiêu đề */
+      font-weight: bold; /* Mức độ đậm cho tiêu đề */
+      margin-top: 10px; /* Thêm khoảng cách phía trên cho tiêu đề */
+  }
+  
+  .pc-submenu {
+      padding-left: 15px; /* Đệm cho các mục con */
+  }
+  
+  .pc-micon {
+      margin-right: 10px; /* Thêm khoảng cách giữa biểu tượng và văn bản */
+  }
+  </style>
+   <nav class="pc-sidebar">
+    <div class="navbar-wrapper">
+      <div class="m-header">
+        <a href="/dashboard" class="b-brand text-primary">
+          <!-- ========   Change your logo from here   ============ -->
+          <div class="text-center">
+            <a href="/dashboard">
+               
+            </a>
+        </div>
+        </a>
+      </div>
+      <div class="navbar-content">
+          
+        <ul class="pc-navbar">
+          <li class="pc-item pc-caption">
+            <label>Home</label>
+          </li>
+          <li class="pc-item">
+            <a href="http://localhost:9090/dashboard" class="pc-link">
+              <span class="pc-micon">
+                <i data-feather="home"></i>
+              </span>
+              <span class="pc-mtext">Dashboard</span>
+            </a>
+          </li>
+          <li class="pc-item pc-caption">
+            <label>Service</label>
+            <i data-feather="feather"></i>
+          </li>
+          <li class="pc-item">
+            <a href="/api/v1/pawnContract/get-all-pawn-contract" class="pc-link">
+              <span class="pc-micon"><i class="fas fa-gem"></i></span> 
+              <span class="pc-mtext">Pawn Contract</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="/api/v1/liquidationContract/get-all-liquidation-contract" class="pc-link">
+              <span class="pc-micon"><i class="fas fa-hand-holding-usd"></i></span> 
+              <span class="pc-mtext">Liquidation Contract</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="/api/v1/pawnItem/get-all-pawn-item" class="pc-link">
+              <span class="pc-micon"><i class="fas fa-box"></i></span>
+              <span class="pc-mtext">Pawn Items</span>
+            </a>
+          </li>
+          <% if (role === 'admin') { %> 
+          <li class="pc-item">
+            <a href="/api/v1/InterestRate/get-interest-rate" class="pc-link">
+              <span class="pc-micon"><i data-feather="percent"></i></span> <!-- Biểu tượng phần trăm -->
+              <span class="pc-mtext">Interest Rate</span>
+            </a>
+          </li>
+          
+          <li class="pc-item pc-caption">
+            <label>Manage</label>
+            <i data-feather="sidebar"></i>
+          </li>
+          
+         <!-- Kiểm tra vai trò là admin -->
+          <li class="pc-item pc-hasmenu">
+            <a href="#!" class="pc-link">
+              <span class="pc-micon">
+                <i data-feather="align-right"></i>
+              </span>
+              <span class="pc-mtext">Manage Account</span>
+              <span class="pc-arrow"><i class="ti ti-chevron-right"></i></span>
+            </a>
+            <ul class="pc-submenu">
+              <li class="pc-item">
+                <a class="pc-link" href="/api/v1/user/get-all-pending-user">
+                  <span class="pc-micon"><i data-feather="clock"></i></span> <!-- Biểu tượng "Pending" -->
+                  <span class="pc-mtext">Pending Users</span>
+                </a>
+              </li>
+              
+              <li class="pc-item">
+                <a class="pc-link" href="/api/v1/user/get-all-user">
+                  <span class="pc-micon"><i data-feather="users"></i></span> <!-- Biểu tượng "List Users" -->
+                  <span class="pc-mtext">List Users</span>
+                </a>
+              </li>
+              <li class="pc-item pc-hasmenu">
+                <ul class="pc-submenu">
+                  <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                      Level 3.3
+                      <span class="pc-arrow"><i class="ti ti-chevron-right"></i></span>
+                    </a>
+                    <ul class="pc-submenu">
+                      <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
+                      <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="pc-item pc-hasmenu">
+                <ul class="pc-submenu">
+                  <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
+                  <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
+                  <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                      Level 3.3
+                      <span class="pc-arrow"><i class="ti ti-chevron-right"></i></span>
+                    </a>
+                    <ul class="pc-submenu">
+                      <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
+                      <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          
+          <li class="pc-item">
+            <a href="/api/v1/trash/get-all-trash" class="pc-link">
+              <span class="pc-micon"><i data-feather="droplet"></i></span>
+              <span class="pc-mtext">Trash</span>
+            </a>
+          </li>
+          <% } %> <!-- Kết thúc kiểm tra vai trò admin -->
+          <!-- <li class="pc-item">
+            <a href="/views/dist/other/sample-page.html" class="pc-link">
+              <span class="pc-micon"><i data-feather="sidebar"></i></span>
+              <span class="pc-mtext">Sample page</span>
+            </a>
+          </li> -->
+  
+        </ul>
+     
+  </nav>
+<!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
+<header class="pc-header">
+  <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
+<div class="me-auto pc-mob-drp">
+  <ul class="list-unstyled">
+    <!-- ======= Menu collapse Icon ===== -->
+    <li class="pc-h-item pc-sidebar-collapse">
+      <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+        <i data-feather="menu"></i>
+      </a>
+    </li>
+    <li class="pc-h-item pc-sidebar-popup">
+      <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+        <i data-feather="menu"></i>
+      </a>
+    </li>
+    <li class="dropdown pc-h-item">
+      <a
+        class="pc-head-link dropdown-toggle arrow-none m-0 trig-drp-search"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-haspopup="false"
+        aria-expanded="false"
+      >
+        <i data-feather="search"></i>
+      </a>
+      <div class="dropdown-menu pc-h-dropdown drp-search">
+        <form class="px-3 py-2">
+          <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- [Mobile Media Block end] -->
+<div class="ms-auto">
+  <ul class="list-unstyled">
+    <li class="dropdown pc-h-item">
+      <a
+        class="pc-head-link dropdown-toggle arrow-none me-0"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-haspopup="false"
+        aria-expanded="false"
+      >
+        <i data-feather="bell"></i>
+        <span class="badge bg-success pc-h-badge">3</span>
+      </a>
+      <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown">
+        <div class="dropdown-header d-flex align-items-center justify-content-between">
+          <h5 class="m-0">Notifications</h5>
+          <a href="#!" class="btn btn-link btn-sm">Mark all read</a>
+        </div>
+        <div class="dropdown-body text-wrap header-notification-scroll position-relative" style="max-height: calc(100vh - 215px)">
+          <p class="text-span">Today</p>
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img class="img-radius avtar rounded-0" src="/views/dist/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-sm text-muted">2 min ago</span>
+                  <h5 class="text-body mb-2">UI/UX Design</h5>
+                  <p class="mb-0"
+                    >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type</p
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img class="img-radius avtar rounded-0" src="/views/dist/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-sm text-muted">1 hour ago</span>
+                  <h5 class="text-body mb-2">Message</h5>
+                  <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-span">Yesterday</p>
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img class="img-radius avtar rounded-0" src="/views/dist/assets/images/user/avatar-3.jpg" alt="Generic placeholder image">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-sm text-muted">2 hour ago</span>
+                  <h5 class="text-body mb-2">Forms</h5>
+                  <p class="mb-0"
+                    >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type</p
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img class="img-radius avtar rounded-0" src="/views/dist/assets/images/user/avatar-4.jpg" alt="Generic placeholder image">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-sm text-muted">12 hour ago</span>
+                  <h5 class="text-body mb-2">Challenge invitation</h5>
+                  <p class="mb-2"><span class="text-dark">Jonny aber</span> invites to join the challenge</p>
+                  <button class="btn btn-sm btn-outline-secondary me-2">Decline</button>
+                  <button class="btn btn-sm btn-primary">Accept</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img class="img-radius avtar rounded-0" src="/views/dist/assets/images/user/avatar-5.jpg" alt="Generic placeholder image">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span class="float-end text-sm text-muted">5 hour ago</span>
+                  <h5 class="text-body mb-2">Security</h5>
+                  <p class="mb-0"
+                    >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type</p
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-2">
+          <a href="#!" class="link-danger">Clear all Notifications</a>
+        </div>
+      </div>
+    </li>
+    <li class="dropdown pc-h-item header-user-profile">
+      <a
+        class="pc-head-link dropdown-toggle arrow-none me-0"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-haspopup="false"
+        data-bs-auto-close="outside"
+        aria-expanded="false"
+      >
+        <i data-feather="user"></i>
+      </a>
+      <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown p-0 overflow-hidden">
+        <div class="dropdown-header d-flex align-items-center justify-content-between bg-primary">
+          <div class="d-flex my-2">
+            <div class="flex-shrink-0">
+              <img src="/views/dist/assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35" />
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-body">
+          <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 225px)">
+            <a href="#" class="dropdown-item">
+              <span>
+                <svg class="pc-icon text-muted me-2">
+                  <use xlink:href="#custom-setting-outline"></use>
+                </svg>
+                <span>Settings</span>
+              </span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <span>
+                <svg class="pc-icon text-muted me-2">
+                  <use xlink:href="#custom-share-bold"></use>
+                </svg>
+                <span>Share</span>
+              </span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <span>
+                <svg class="pc-icon text-muted me-2">
+                  <use xlink:href="#custom-lock-outline"></use>
+                </svg>
+                <span>Change Password</span>
+              </span>
+            </a>
+            <div class="d-grid my-2">
+              <button class="btn btn-primary">
+                <svg class="pc-icon me-2">
+                  <use xlink:href="#custom-logout-1-outline"></use></svg
+                >Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+ </div>
+</header>
+<!-- [ Header ] end -->
+
+
+
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h5 class="mb-0">Home</h5>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <ul class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="http://localhost:9090/dashboard">Home</a></li>
+                  <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
+                  <li class="breadcrumb-item" aria-current="page">Create Pawn</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          <!-- [ daily sales section ] start -->
+          <div class="col-md-6 col-xl-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h6 class="mb-4">Daily Sales</h6>
+                      <div class="row d-flex align-items-center">
+                          <div class="col-9">
+                              <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="feather icon-arrow-up text-success f-30 m-r-10"></i>$249.95</h3>
+                          </div>
+
+                          <div class="col-3 text-end">
+                              <p class="m-b-0">67%</p>
+                          </div>
+                      </div>
+                      <div class="progress m-t-30" style="height: 7px;">
+                          <div class="progress-bar bg-brand-color-1" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- [ daily sales section ] end -->
+
+          <!-- [ Monthly  sales section ] start -->
+          <div class="col-md-6 col-xl-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h6 class="mb-4">Monthly Sales</h6>
+                      <div class="row d-flex align-items-center">
+                          <div class="col-9">
+                              <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-down text-danger f-30 m-r-10"></i>$2.942.32</h3>
+                          </div>
+                          <div class="col-3 text-end">
+                              <p class="m-b-0">36%</p>
+                          </div>
+                      </div>
+                      <div class="progress m-t-30" style="height: 7px;">
+                          <div class="progress-bar bg-brand-color-2" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- [ Monthly  sales section ] end -->
+
+          <!-- [ year  sales section ] start -->
+          <div class="col-md-12 col-xl-4">
+              <div class="card">
+                  <div class="card-body">
+                      <h6 class="mb-4">Yearly Sales</h6>
+                      <div class="row d-flex align-items-center">
+                          <div class="col-9">
+                              <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-up text-success f-30 m-r-10"></i>$8.638.32</h3>
+                          </div>
+                          <div class="col-3 text-end">
+                              <p class="m-b-0">80%</p>
+                          </div>
+                      </div>
+                      <div class="progress m-t-30" style="height: 7px;">
+                          <div class="progress-bar bg-brand-color-1" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Hợp Đồng Cầm Đồ</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 20px;
+          background-color: #f9f9f9;
+          color: #333;
+      }
+  
+      h1 {
+          text-align: center;
+          color: #010a13;
+          margin-bottom: 20px;
+      }
+  
+      form {
+          max-width: 600px; /* Giới hạn chiều rộng của form */
+          margin: 0 auto; /* Căn giữa form */
+          padding: 30px; /* Thêm khoảng đệm cho form */
+          background-color: #ffffff; /* Màu nền cho form */
+          border-radius: 8px; /* Bo tròn góc */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng cho form */
+          transition: box-shadow 0.3s; /* Hiệu ứng đổ bóng */
+      }
+  
+      form:hover {
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng khi hover */
+      }
+  
+      label {
+          display: block; /* Đặt label ở dạng khối */
+          margin-bottom: 8px; /* Khoảng cách dưới mỗi label */
+          font-weight: bold; /* Làm cho chữ in đậm */
+      }
+  
+      input, select {
+          width: 100%; /* Đặt chiều rộng input thành 100% */
+          padding: 12px; /* Khoảng đệm trong input */
+          margin-bottom: 20px; /* Khoảng cách dưới mỗi input */
+          border: 1px solid #ccc; /* Đường viền cho input */
+          border-radius: 5px; /* Bo tròn góc input */
+          box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến kích thước */
+          font-size: 16px; /* Kích thước chữ trong input */
+          transition: border-color 0.3s; /* Hiệu ứng chuyển tiếp màu viền */
+      }
+  
+      input:focus, select:focus {
+          border-color: #0056b3; /* Màu viền khi focus */
+          outline: none; /* Xóa viền ngoài khi focus */
+      }
+  
+      button {
+          width: 100%; /* Đặt chiều rộng button thành 100% */
+          padding: 12px; /* Khoảng đệm cho button */
+          background-color: #28a745; /* Màu nền cho button */
+          color: white; /* Màu chữ cho button */
+          border: none; /* Xóa đường viền */
+          border-radius: 5px; /* Bo tròn góc button */
+          cursor: pointer; /* Thay đổi con trỏ khi hover */
+          font-size: 18px; /* Kích thước chữ trong button */
+          transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp màu nền */
+      }
+  
+      button:hover {
+          background-color: #218838; /* Màu nền cho button khi hover */
+      }
+  
+      .back-button {
+          display: inline-block; /* Đặt back-button ở dạng khối nội tuyến */
+          margin-top: 20px; /* Khoảng cách trên cho button quay lại */
+          padding: 12px 15px; /* Khoảng đệm cho button quay lại */
+          background-color: #007bff; /* Màu nền cho button quay lại */
+          color: white; /* Màu chữ cho button quay lại */
+          text-decoration: none; /* Xóa gạch chân */
+          border-radius: 5px; /* Bo tròn góc button quay lại */
+          text-align: center; /* Căn giữa chữ trong button quay lại */
+          font-size: 16px; /* Kích thước chữ trong button quay lại */
+          transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp màu nền */
+      }
+  
+      .back-button:hover {
+          background-color: #0056b3; /* Màu nền cho button quay lại khi hover */
+      }
+  </style>
+  
+</head>
+<body>
+  <h1>Tạo Hợp Đồng Cầm Đồ</h1>
+<form id="createContractForm" action="/api/v1/pawnContract/create-pawn-contract" method="POST">
+    <label for="customerName">Tên Khách Hàng:</label>
+    <input type="text" id="customerName" name="customerName" required>
+
+    <label for="customerPhone">Số Điện Thoại:</label>
+    <input type="text" id="customerPhone" name="customerPhone" required>
+
+    <label for="customerAddress">Địa Chỉ:</label>
+    <input type="text" id="customerAddress" name="customerAddress" required>
+
+    <label for="assetType">Loại Tài Sản:</label>
+    <select id="assetType" name="assetType" required onchange="updateInterestRate()">
+        <% assetTypes.forEach(type => { %>
+            <option value="<%= type %>"><%= type %></option>
+        <% }) %>
+    </select>
+
+    <label for="assetName">Tên Tài Sản:</label>
+    <input type="text" id="assetName" name="assetName" required>
+
+    <label for="assetCondition">Tình Trạng Tài Sản:</label>
+    <input type="text" id="assetCondition" name="assetCondition" required>
+
+    <label for="principalAmount">Số Tiền Cầm:</label>
+    <input type="number" id="principalAmount" name="principalAmount" required>
+
+    <label for="rate">Lãi Suất (%):</label>
+    <input type="text" id="rate" name="rate" readonly>
+
+    <label for="startDate">Ngày Bắt Đầu:</label>
+    <input type="date" id="startDate" name="startDate" required>
+
+    <label for="endDate">Ngày Kết Thúc:</label>
+    <input type="date" id="endDate" name="endDate" required>
+
+    <input type="hidden" id="totalAmountDue" name="totalAmountDue">
+
+    <button type="submit">Tạo Hợp Đồng</button>
+</form>
+<a href="/api/v1/pawnContract/get-all-pawn-contract" class="back-button">Trở Lại Danh Sách Hợp Đồng</a>
+<script>
+  document.getElementById("createContractForm").addEventListener("submit", async function (event) {
+      event.preventDefault(); // Ngăn gửi form mặc định
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      // Chuyển FormData thành JSON
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+          const response = await fetch(form.action, {
+              method: form.method,
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify(data)
+          });
+
+          if (response.ok) {
+              // Hiển thị thông báo và chuyển hướng sau khi tạo hợp đồng thành công
+              alert("Hợp đồng tạo thành công!");
+              window.location.href = "http://localhost:9090/api/v1/pawnContract/get-all-pawn-contract";
+          } else {
+              const error = await response.json();
+              alert(`Tạo hợp đồng thất bại: ${error.message || "Lỗi không xác định"}`);
+          }
+      } catch (error) {
+          alert(`Lỗi khi gửi yêu cầu: ${error.message}`);
+      }
+  });
+</script>
+
+<script>
+  // Chuyển đổi interestRateMap thành một đối tượng trong JavaScript
+  const interestRateMap = <%- JSON.stringify(interestRateMap || {}) %>; 
+  const rateInput = document.getElementById('rate');
+
+  function updateInterestRate() {
+      const selectedAssetType = document.getElementById('assetType').value;
+      // Lấy lãi suất cho loại tài sản đã chọn
+      const interestRate = interestRateMap[selectedAssetType] || 0; 
+      rateInput.value = interestRate; 
+  }
+
+  // Gọi hàm updateInterestRate khi trang được tải để thiết lập lãi suất mặc định
+  document.addEventListener('DOMContentLoaded', function() {
+      updateInterestRate();
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Lấy ngày hiện tại
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Tháng 0-11, nên cộng thêm 1
+    const year = today.getFullYear();
+
+    // Thiết lập giá trị cho trường ngày bắt đầu
+    document.getElementById("startDate").value = `${year}-${month}-${day}`;
+  });
+</script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- <script>
+        // Hàm tính toán tổng số tiền phải trả
+        function calculateTotalAmountDue() {
+            const principalAmount = parseFloat(document.getElementById('principalAmount').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const days = (new Date(document.getElementById('endDate').value) - new Date(document.getElementById('startDate').value)) / (1000 * 60 * 60 * 24); // Số ngày giữa ngày bắt đầu và kết thúc
+            if (!isNaN(principalAmount) && !isNaN(rate) && days >= 0) {
+                const totalAmountDue = principalAmount + (principalAmount * rate * days);
+                document.getElementById('totalAmountDue').value = totalAmountDue; // Lưu tổng số tiền phải trả vào trường ẩn
+            }
+        }
+
+        // Gọi hàm tính toán khi thay đổi các trường liên quan
+        document.getElementById('principalAmount').addEventListener('input', calculateTotalAmountDue);
+        document.getElementById('rate').addEventListener('input', calculateTotalAmountDue);
+        document.getElementById('startDate').addEventListener('change', calculateTotalAmountDue);
+        document.getElementById('endDate').addEventListener('change', calculateTotalAmountDue);
+        
+        
+    </script> -->
+
+
+    <footer class="pc-footer">
+        <div class="footer-wrapper container-fluid">
+          <div class="row">
+            <div class="col my-1">
+              <p class="m-0"
+                >Datta able &#9829; crafted by Team <a href="https://codedthemes.com/" target="_blank">Codedthemes</a></p
+              >
+            </div>
+            <div class="col-auto my-1">
+              <ul class="list-inline footer-link mb-0">
+                <li class="list-inline-item"><a href="../views/dashboard.ejs">Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer> 
+      
+      <!-- [Page Specific JS] start -->
+      <!-- apexcharts js -->
+      <script src="/views/dist/assets/js/plugins/apexcharts.min.js"></script>
+  
+      <script src="/views/dist/assets/js/plugins/jsvectormap.min.js"></script>
+      <script src="/views/dist/assets/js/plugins/world.js"></script>
+  
+      <script src="/views/dist/assets/js/pages/dashboard-default.js"></script>
+      <!-- [Page Specific JS] end -->
+      <!-- Required Js -->
+      <script src="/views/dist/assets/js/plugins/popper.min.js"></script>
+      <script src="/views/dist/assets/js/plugins/simplebar.min.js"></script>
+      <script src="/views/dist/assets/js/plugins/bootstrap.min.js"></script>
+      <script src="/views/dist/assets/js/fonts/custom-font.js"></script>
+      <script src="/views/dist/assets/js/pcoded.js"></script>
+      <script src="/views/dist/assets/js/plugins/feather.min.js"></script>
+  
+      
+      
+      
+      
+      <script>layout_change('light');</script>
+      
+      
+      
+      
+      <script>change_box_container('false');</script>
+      
+      
+      <script>layout_caption_change('true');</script>
+      
+      
+      
+      
+      <script>layout_rtl_change('false');</script>
+      
+      
+      <script>preset_change("preset-1");</script>
+      
+      
+      <script>layout_theme_sidebar_change('false');</script>
+</body>
+</html>

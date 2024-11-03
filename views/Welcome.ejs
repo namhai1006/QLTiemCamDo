@@ -1,0 +1,296 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PawnShop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fdfdfd;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+        header nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        header .btn {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+        .hero .text {
+            max-width: 50%;
+        }
+        .hero h1 {
+            font-size: 48px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero .btn {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .hero .image {
+            max-width: 45%;
+        }
+        .hero .image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .stats div {
+            flex: 1;
+        }
+        .stats div:not(:last-child) {
+            border-right: 1px solid #ddd;
+        }
+        .stats h3 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+        .stats p {
+            font-size: 18px;
+        }
+        .why-choose-us {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .why-choose-us h2 {
+            font-size: 36px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .why-choose-us p {
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+        }
+        .feature {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .feature h3 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .feature p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .feature .btn {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .subscribe {
+            background: #fff3e0;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin: 50px 0;
+        }
+        .subscribe h2 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .subscribe p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .subscribe input {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        .subscribe .btn {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        footer {
+            background: #fdfdfd;
+            padding: 50px 0;
+            text-align: center;
+        }
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        footer .footer-content div {
+            flex: 1;
+            margin: 10px;
+        }
+        footer .footer-content h3 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        footer .footer-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        footer .footer-content a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer .social-icons a {
+            margin: 0 10px;
+            color: #ff6b6b;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                PawnShop
+            </div>
+            <nav>
+                <a href="/welcome">Home</a>
+                <a href="#">Menu</a>
+                <a href="#">Contact</a>
+                <a href="#">About Us</a>
+            </nav>
+            <a class="btn" href="/api/v1/auth/login">Sign In</a>
+        </header>
+        <section class="hero">
+            <div class="text">
+                <h1>Save time<br/>Just transparent clear<br/>With secure information</h1>
+                <p>Imagine you don't need to waste time thinking about where to pawn things safely and reasonably because we provide what you need.</p>
+                <a class="btn" href="/api/v1/auth/register">Pawn Now</a>
+            </div>
+            <div class="image">
+                <img src="https://storage.googleapis.com/a1aa/image/culVPkZQbsIFIlVmZVD96euFPVRKtaXhFfmkMSNsio6nDWtTA.jpg" alt="Happy customer holding a pawned item" width="400" height="400"/>
+            </div>
+        </section>
+        <section class="stats">
+            <div>
+                <h3>5,000+</h3>
+                <p>Customers</p>
+            </div>
+            <div>
+                <h3>8,000+</h3>
+                <p>Safety</p>
+            </div>
+            <div>
+                <h3>1,000+</h3>
+                <p>Savings</p>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <h2>WHY CHOOSE US<br/>FOR YOUR PAWN SHOP</h2>
+            <p>We continue to consistently choose and maintain the quality of the service so that it remains safe and purposeful right when you pawned it.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Loan place</h3>
+                    <p>Long established fact that a reader will be distracted by the readable content.</p>
+                    <a class="btn" href="#">Learn more</a>
+                </div>
+                <div class="feature">
+                    <h3>#1 Pawn Shop</h3>
+                    <p>The power of choice is untrammelled and when nothing prevents our being able to do what we like best.</p>
+                    <a class="btn" href="#">Learn more</a>
+                </div>
+                <div class="feature">
+                    <h3>100 Top Brand</h3>
+                    <p>One of the best brands in the field of pawnshop sector.</p>
+                    <a class="btn" href="#">Learn more</a>
+                </div>
+            </div>
+        </section>
+        <section class="subscribe">
+            <h2>Subscribe To Get The Latest Promo from Pawn Shop</h2>
+            <p>We recommend you to subscribe to our promo program, drop your email below to get daily update about us.</p>
+            <input type="email" placeholder="Enter your email address"/>
+            <a class="btn" href="/api/v1/auth/register">Subscribe</a>
+        </section>
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <h3>Pawn Shop</h3>
+                    <p>Long established fact that a reader will be distracted by the readable content.</p>
+                </div>
+                <div>
+                    <h3>Feature</h3>
+                    <p><a href="#">Home</a></p>
+                    <p><a href="#">Contact</a></p>
+                    <p><a href="#">About us</a></p>
+                </div>
+                <div>
+                    <h3>Get in Touch</h3>
+                    <p>info@pawnshop.com</p>
+                    <p>+1 234-456-7890</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Tài Sản Trong Thùng Rác</title>
+    <link rel="stylesheet" href="dist/assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f0f4f8;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button-container a {
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .create-button {
+            background-color: #28a745;
+        }
+        .create-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        .action-button {
+            padding: 8px 15px; /* Tăng padding để làm cho nút lớn hơn */
+            font-size: 1em; /* Tăng kích thước font */
+            margin-left: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .restore-button {
+            background-color: #007bff;
+        }
+        .restore-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .delete-button {
+            background-color: #dc3545;
+        }
+        .delete-button:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td:last-child {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        /* Định dạng cho cột dữ liệu */
+        .data-container {
+            max-height: 100px;
+            overflow-y: auto;
+            font-size: 0.9em;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .filter-container {
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 20px;
+      }
+      input[type="text"] {
+          padding: 10px;
+          font-size: 16px;
+          margin-right: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 300px; /* Thay đổi kích thước ô tìm kiếm */
+      }
+    </style>
+</head>
+<body>
+    <div class="filter-container">
+        <label for="searchInput">Tìm Kiếm:</label>
+        <input type="text" id="searchInput" placeholder="Nhập tên khách hàng hoặc tài sản..." onkeyup="searchLiquidationContracts()">
+    </div>
+    <h1>Danh Sách Tài Sản Trong Thùng Rác</h1>
+    
+  
+    <table>
+        <thead>
+            <tr>
+                <th>Loại Tài Sản</th>
+                <th>ID Tài Sản</th>
+                <th>Dữ Liệu</th>
+                <th>Ngày Xóa</th>
+                <th>Ngày Còn Lại</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (trashItems && trashItems.length > 0) { %>
+                <% trashItems.forEach(item => { %>
+                    <tr>
+                        <td><%= item.itemType %></td>
+                        <td><%= item.itemId %></td>
+                        <td>
+                            <div class="data-container">
+                                <ul style="list-style-type: none; padding-left: 0;">
+                                    <% for (const [key, value] of Object.entries(item.data)) { %>
+                                        <li><strong><%= key %>:</strong> <%= JSON.stringify(value) %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </td>
+                        <td><%= new Date(item.deletedAt).toLocaleDateString('vi-VN') %></td>
+                        <td><%= item.daysRemaining %> ngày</td>
+                        <td>
+                            <form action="/api/v1/trash/restore-from-trash/<%= item._id %>?_method=PATCH" method="POST" style="display: inline;">
+                                <button type="submit" class="action-button restore-button" onclick="return confirm('Bạn có chắc chắn muốn khôi phục?');">Khôi Phục</button>
+                            </form>
+                            <form action="/api/v1/trash/delete-from-trash/<%= item._id %>?_method=DELETE" method="POST" style="display: inline;">
+                                <button type="submit" class="action-button delete-button" onclick="return confirm('Bạn có chắc chắn muốn xóa vĩnh viễn?');">Xóa Vĩnh Viễn</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="6" style="text-align: center;">Không có tài sản nào trong thùng rác.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <script>
+        function searchLiquidationContracts() {
+            // Lấy giá trị tìm kiếm từ ô input
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase(); // Chuyển đổi thành chữ thường để so sánh
+            const table = document.querySelector('table'); // Lấy bảng
+            const rows = table.getElementsByTagName('tr'); // Lấy tất cả các hàng trong bảng
+    
+            // Lặp qua tất cả các hàng trong bảng, trừ hàng đầu tiên (tiêu đề)
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let found = false;
+    
+                // Kiểm tra các ô trong hàng
+                for (let j = 0; j < cells.length; j++) {
+                    const cell = cells[j];
+                    if (cell) {
+                        // Kiểm tra nếu ô chứa giá trị tìm kiếm
+                        if (cell.textContent.toLowerCase().indexOf(filter) > -1) {
+                            found = true; // Nếu tìm thấy, đánh dấu là có
+                            break; // Thoát vòng lặp
+                        }
+                    }
+                }
+    
+                // Hiển thị hoặc ẩn hàng dựa trên kết quả tìm kiếm
+                if (found) {
+                    rows[i].style.display = ''; // Hiển thị hàng
+                } else {
+                    rows[i].style.display = 'none'; // Ẩn hàng
+                }
+            }
+        }
+    </script>
+    <div class="button-container">
+        <a href="/dashboard" class="create-button">Quay Trở Lại Dashboard</a>
+    </div>
+
+</body>
+</html>

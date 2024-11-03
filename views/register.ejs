@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register | Datta Able Dashboard Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Datta Able trending dashboard template made using Bootstrap 5.">
+  <meta name="keywords" content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel">
+  <meta name="author" content="Codedthemes">
+
+  <!-- Favicon icon -->
+  <link rel="icon" href="/views/dist/assets/images/favicon.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/views/dist/assets/fonts/tabler-icons.min.css">
+  <link rel="stylesheet" href="/views/dist/assets/fonts/feather.css">
+  <link rel="stylesheet" href="/views/dist/assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="/views/dist/assets/fonts/material.css">
+  <link rel="stylesheet" href="/views/dist/assets/css/style.css" id="main-style-link">
+  <link rel="stylesheet" href="/views/dist/assets/css/style-preset.css">
+</head>
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme="light">
+  <!-- Pre-loader start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- Pre-loader End -->
+<style>
+   .small-logo {
+    width: 100px; /* Điều chỉnh kích thước theo mong muốn */
+    height: auto; /* Tự động giữ tỷ lệ khung hình */
+}
+</style>
+  <div class="auth-main">
+    <div class="auth-wrapper v1">
+      <div class="auth-form">
+        <div class="position-relative my-5">
+          <div class="auth-bg">
+            <span class="r"></span>
+            <span class="r s"></span>
+            <span class="r s"></span>
+            <span class="r"></span>
+          </div>
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="text-center">
+                <div class="text-center">
+                
+              </div>
+              </div>
+              <h4 class="text-center f-w-500 mt-4 mb-3">Đăng ký</h4>
+
+              <!-- Custom Register Form -->
+              <form action="/api/v1/auth/register" method="POST">
+                <div class="form-group mb-3">
+                  <label for="name" class="form-label">Họ và tên:</label>
+                  <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="phone" class="form-label">Số điện thoại:</label>
+                  <input type="text" id="phone" name="phone" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="address" class="form-label">Địa chỉ:</label>
+                  <input type="text" id="address" name="address" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="username" class="form-label">Tên đăng nhập:</label>
+                  <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="email" class="form-label">Email:</label>
+                  <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="password" class="form-label">Mật khẩu:</label>
+                  <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="confirmPassword" class="form-label">Xác nhận mật khẩu:</label>
+                  <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                </div>
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary shadow px-sm-4">Đăng ký</button>
+                </div>
+              </form>
+              <!-- End of Custom Register Form -->
+
+              <div class="d-flex justify-content-between align-items-end mt-4">
+                <h6 class="f-w-500 mb-0">Bạn đã có tài khoản?</h6>
+                <a href="/api/v1/auth/login" class="link-primary">Đăng nhập</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Required Js -->
+  <script src="/views/dist/assets/js/plugins/popper.min.js"></script>
+  <script src="/views/dist/assets/js/plugins/simplebar.min.js"></script>
+  <script src="/views/dist/assets/js/plugins/bootstrap.min.js"></script>
+  <script src="/views/dist/assets/js/pcoded.js"></script>
+</body>
+</html>

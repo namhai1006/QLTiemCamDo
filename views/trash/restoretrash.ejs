@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khôi Phục Tài Sản</title>
+    <link rel="stylesheet" href="dist/assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f0f4f8;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button-container a {
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+            background-color: #007bff;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .item-details {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Thông Tin Tài Sản Đã Khôi Phục</h1>
+    
+    <div class="item-details">
+        <h2>Tài sản: <%= restoredItem.itemType %></h2>
+        <p><strong>ID Tài Sản:</strong> <%= restoredItem._id %></p>
+        <p><strong>Dữ Liệu:</strong></p>
+        <pre><%= JSON.stringify(restoredItem.data, null, 2) %></pre>
+        <p><strong>Ngày Khôi Phục:</strong> <%= new Date().toLocaleDateString('vi-VN') %></p>
+    </div>
+
+    <div class="button-container">
+        <a href="/api/v1/trash/get-all-trash" class="back-button">Quay Lại Danh Sách Thùng Rác</a>
+    </div>
+</body>
+</html>
