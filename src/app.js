@@ -14,7 +14,8 @@ import pawnContractRoutes from "./routes/pawnContractRoutes.js";
 import pawnItemRoutes from "./routes/pawnItemRoutes.js";
 import liquidationContractRoutes from "./routes/liquidationContractRoutes.js";
 import interestRateRoutes from "./routes/interestRateRoutes.js";
-import trashRoutes from "./routes/trashRoutes.js"
+import trashRoutes from "./routes/trashRoutes.js";
+import revenueRoutes from './routes/revenueRoutes.js';
 import "./cronJobs.js";
 
 connectDB();
@@ -33,6 +34,7 @@ app.use(prefix.APP_REFIX + "trash", trashRoutes);
 app.use(prefix.APP_REFIX + "liquidationContract", liquidationContractRoutes);
 app.use(prefix.APP_REFIX + "pawnItem", pawnItemRoutes);
 app.use(prefix.APP_REFIX + "interestRate", interestRateRoutes);
+app.use(prefix.APP_REFIX + "revenue", revenueRoutes);
 
 app.all("*", (req, res, next) => {
   const error = new Error(`Can't find ${req.originalUrl} on this server!`);
