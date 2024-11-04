@@ -11,6 +11,8 @@ const userSchema = new mongoose.Schema(
     password: { type: String, required: true },
     role: { type: String, enum: ["admin", "employee"], default: "employee" },
     isApproved: { type: Boolean, default: false },
+    isEmailVerified: { type: Boolean, default: false },
+    emailVerificationToken: { type: String },
   },
   { timestamps: true }
 );
